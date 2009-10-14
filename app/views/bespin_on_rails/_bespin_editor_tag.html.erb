@@ -11,10 +11,10 @@
     _editorComponent.set("<%= k -%>", "<%= v -%>");
     <% end %>
 
-    _editorComponent.setContent(dojo.byId("<%= name -%>").value);
+    _editorComponent.setContent(dojo.byId("<%= sanitize_to_id(name) -%>").value);
 
     _editorComponent.onchange(function() {
-      dojo.byId("<%= name -%>").value = _editorComponent.getContent();
+      dojo.byId("<%= sanitize_to_id(name) -%>").value = _editorComponent.getContent();
     });
   });
 </script>
